@@ -1,0 +1,175 @@
+@import 'scrollbars.css';
+
+@font-face {
+  font-family: 'Sacramento';
+  src: url('../fonts/Sacramento.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins.ttf');
+}
+
+@keyframes head-bg {
+  to {background-position: 100%}
+}
+
+@keyframes fig-shadow {
+  0% {box-shadow: 0 .25rem .75rem #52F}
+  20% {box-shadow: 0 .25rem .75rem #92F}
+  40% {box-shadow: 0 .25rem .75rem deeppink}
+  60% {box-shadow: 0 .25rem .75rem #F33}
+  80% {box-shadow: 0 .25rem .75rem orange}
+  100% {box-shadow: 0 .25rem .75rem #FC0}
+}
+
+@keyframes link-color {
+  0% {color: #52F}
+  20% {color: #92F}
+  40% {color: deeppink}
+  60% {color: #F33}
+  80% {color: orange}
+  100% {color: #FC0}
+}
+
+:root {
+  --cols: 5;
+}
+
+body {
+  color: white;
+  background: black;
+  margin: 0;
+  font-family: 'Poppins';
+  text-align: center;
+}
+
+header {
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    #52F,
+    #92F,
+    deeppink,
+    #F33,
+    orange,
+    #FC0
+  );
+  background-size: 600%;
+  animation: head-bg 10s infinite alternate ease-in-out;
+}
+
+h1 {
+  font-family: 'Sacramento';
+  font-size: 6rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 1.5rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+main {
+  font-size: 0;
+  padding: 3rem 0 1rem 2rem;
+}
+
+main * {
+  font-size: initial;
+}
+
+.item {
+  padding: 0 2rem 2rem 0;
+  padding-left: 0;
+  display: inline-block;
+  width: calc(100% / var(--cols));
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+figure {
+  margin: 0;
+  border-radius: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: black;
+  background-color: white;
+  box-shadow: 0 .25rem .75rem gray;
+  animation: fig-shadow 10s infinite alternate ease-in-out;
+  transition: transform 250ms;
+}
+
+figure:hover {
+  transform: scale(1.025);
+}
+
+img {
+  height: 8rem;
+  object-fit: cover;
+}
+
+figcaption {
+  padding: 1em;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #151515;
+}
+
+footer h3 {
+  font-size: 2rem;
+  display: inline-block;
+  margin: 0;
+  margin-right: .5rem;
+}
+
+a {
+  font-size: 2rem;
+  animation: link-color 10s infinite alternate ease-in-out;
+  text-decoration: none;
+  transition: text-shadow 250ms;
+}
+
+a:hover {
+  text-shadow: 0 0 .5rem;
+}
+
+a:active {
+  opacity: 97.5%;
+}
+
+@media (max-width: 1536px) {
+  :root {--cols: 4}
+}
+
+@media (max-width: 1152px) {
+  :root {--cols: 2}
+}
+
+@media (max-width: 640px) {
+  :root {--cols: 1}
+  h1 {font-size: 5rem}
+  footer h3 {font-size: 1.5rem}
+  a {font-size: 1.5rem}
+}
+
+@media (max-width: 512px) {
+  h1 {font-size: 4rem}
+}
+
+@media (max-width: 384px) {
+  h1 {font-size: 3em}
+  footer h3 {font-size: 1rem}
+  a {font-size: 1rem}
+}

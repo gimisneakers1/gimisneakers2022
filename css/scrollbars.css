@@ -1,0 +1,26 @@
+:root {
+  scrollbar-color: black #333;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 1rem;
+  min-height: 2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #555;
+}
